@@ -23,32 +23,40 @@ public class Main {
                 case 1:
                     System.out.println("Has seleccionado la opcion 1 Añadir nodo");
                     int ins;
-                    ins = Integer.parseInt(JOptionPane.showInputDialog(null,"Inserte el valor del nodo"));
+                    ins = Integer.parseInt(JOptionPane.showInputDialog(null, "Inserte el valor del nodo"));
                     arbolito.insertar(ins);
+                    System.out.println("----------------------------");
                     break;
                 case 2:
                     System.out.println("Has seleccionado la opcion 2 Mostrar en preorden");
                     arbolito.mostrarPreorden();
+                    System.out.println("----------------------------");
                     break;
                 case 3:
                     System.out.println("Has seleccionado la opcion 3 Mostrar en inorden");
                     arbolito.mostrarInorden();
+                    System.out.println("----------------------------");
                     break;
                 case 4:
                     System.out.println("Has seleccionado la opcion 4 Mostrar en postorden");
                     arbolito.mostrarPostorden();
+                    System.out.println("----------------------------");
                     break;
                 case 5:
                     System.out.println("Has seleccionado la opcion 5 Eliminar un nodo");
                     int eli;
-                    eli= Integer.parseInt(JOptionPane.showInputDialog(null, "Inserte el valor a eliminar"));
+                    eli = Integer.parseInt(JOptionPane.showInputDialog(null, "Inserte el valor a eliminar"));
                     arbolito.eliminar(eli);
+                    System.out.println("----------------------------");
                     break;
                 case 6:
                     salir = true;
+                    System.out.println("----------------------------");
                     break;
                 default:
                     System.out.println("Solo números entre 1 y 4");
+                    System.out.println("----------------------------");
+
             }
 
         }
