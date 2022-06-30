@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package arboles;
+package Arbol;
 
 /**
  *
@@ -13,11 +13,13 @@ public class Nodo {
 
     private int dato;
     private Nodo hijoIzquierdo, hijoDerecho;
+    private int tamanio;
 
     public Nodo(int d) {
         this.dato = d;
         this.hijoDerecho = null;
         this.hijoIzquierdo = null;
+        this.tamanio = 1;
     }
 
     public Nodo findPredecessor() {
@@ -56,6 +58,7 @@ public class Nodo {
                 response = null;
             }
         }
+        this.tamanio--;
         return response;
     }
 
@@ -63,20 +66,28 @@ public class Nodo {
         if (v < this.dato) {
             if (this.hijoIzquierdo == null) {
                 this.hijoIzquierdo = new Nodo(v);
+                this.tamanio= this.tamanio+1;
             } else {
                 this.hijoIzquierdo.insertar(v);
+                this.tamanio= this.tamanio+1;
             }
         } else {
             if (this.hijoDerecho == null) {
                 this.hijoDerecho = new Nodo(v);
+                this.tamanio= this.tamanio+1;
             } else {
                 this.hijoDerecho.insertar(v);
+                this.tamanio= this.tamanio+1;
             }
         }
     }
 
     public int getDato() {
         return dato;
+    }
+
+    public int getTamanio() {
+        return tamanio;
     }
 
     public Nodo getHijoIzquierdo() {

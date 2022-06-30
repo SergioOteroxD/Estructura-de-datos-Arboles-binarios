@@ -1,15 +1,24 @@
-package arboles;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Arbol;
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class Main {
-
-    public static void main(String[] args) {
+/**
+ *
+ * @author SergioxD
+ */
+public class MenuArbol {
+    public static void menu(){
+        
         Scanner sn = new Scanner(System.in);
         boolean salir = false;
         int opcion; // Guardaremos la opcion del usuario
-        Arbol arbolito = new Arbol();
+        ArbolInt arbolito = new ArbolInt();
         while (!salir) {
             opcion = Integer.parseInt(JOptionPane.showInputDialog("Digite la opcion que quiere ejecutar\n"
                     + "1. Añadir nodo\n"
@@ -61,5 +70,5 @@ public class Main {
 
         }
     }
-
+    
 }

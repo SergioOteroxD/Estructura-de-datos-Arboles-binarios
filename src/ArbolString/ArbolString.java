@@ -3,21 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package arboles;
+package ArbolString;
 
 /**
  *
  * @author SergioxD
  */
-public class Arbol {
+public class ArbolString {
 
     Nodo raiz;
 
-    public Arbol() {
+    public ArbolString() {
         this.raiz = null;
     }
 
-    public void insertar(int val) {
+    public void insertar(String val) {
         if (raiz == null) {
             this.raiz = new Nodo(val);
         } else {
@@ -25,7 +25,7 @@ public class Arbol {
         }
     }
 
-    public void eliminar(int num) {
+    public void eliminar(String num) {
         this.raiz.delete(num);
     }
 
@@ -37,7 +37,7 @@ public class Arbol {
         if (nod == null) {
             return; // detener la recursividad
         } else {
-            System.out.println(nod.getDato());
+            System.out.print(nod.getDato());
             preorden(nod.getHijoIzquierdo());
             preorden(nod.getHijoDerecho());
         }
@@ -53,7 +53,7 @@ public class Arbol {
             return; // detener la recursividad
         } else {
             Inorden(nod.getHijoIzquierdo());
-            System.out.println(nod.getDato());
+            System.out.print(nod.getDato());
             Inorden(nod.getHijoDerecho());
         }
 
@@ -70,7 +70,7 @@ public class Arbol {
 
             Postorden(nod.getHijoIzquierdo());
             Postorden(nod.getHijoDerecho());
-            System.out.println(nod.getDato());
+            System.out.print(nod.getDato());
         }
 
     }
