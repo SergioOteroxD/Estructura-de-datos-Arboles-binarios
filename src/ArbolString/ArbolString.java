@@ -5,10 +5,7 @@
  */
 package ArbolString;
 
-/**
- *
- * @author SergioxD
- */
+
 public class ArbolString {
 
     Nodo raiz;

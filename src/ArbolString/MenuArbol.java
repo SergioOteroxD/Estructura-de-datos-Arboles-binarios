@@ -8,10 +8,6 @@ package ArbolString;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author SergioxD
- */
 public class MenuArbol {
     public static void menu(){
         

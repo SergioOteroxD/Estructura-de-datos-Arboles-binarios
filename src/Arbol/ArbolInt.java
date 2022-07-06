@@ -5,16 +5,29 @@
  */
 package Arbol;
 
-/**
- *
- * @author SergioxD
- */
 public class ArbolInt {
 
     Nodo raiz;
 
     public ArbolInt() {
         this.raiz = null;
+    }
+
+    public void cambioRamas() {
+        cambio(this.raiz);
+    }
+
+    public void cambio(Nodo nod) {
+        if (nod == null) {
+            return;
+        }
+        Nodo newDerecha, newHizquierda;
+        newDerecha = nod.getHijoIzquierdo();
+        newHizquierda = nod.getHijoDerecho();
+        nod.setHijoDerecho(newDerecha);
+        nod.setHijoIzquierdo(newHizquierda);
+        cambio(nod.getHijoDerecho());
+        cambio(nod.getHijoIzquierdo());
     }
 
     public void insertar(int val) {
@@ -63,7 +76,6 @@ public class ArbolInt {
 
     }
 
-
     public void mostrarPostorden() {
         this.Postorden(this.raiz);
     }
@@ -84,9 +96,9 @@ public class ArbolInt {
         return suma(this.raiz);
     }
 
-    public double getPromedio(){
+    public double getPromedio() {
         double prom;
-        prom = getSuma()/getTamanio();
+        prom = getSuma() / getTamanio();
         return prom;
     }
 
@@ -95,12 +107,45 @@ public class ArbolInt {
         if (nod == null) {
             return sum; // detener la recursividad
         } else {
-            sum =sum + nod.getDato();
-            sum=sum+suma(nod.getHijoDerecho());
-            sum=sum+suma(nod.getHijoIzquierdo());
+            sum = sum + nod.getDato();
+            sum = sum + suma(nod.getHijoDerecho());
+            sum = sum + suma(nod.getHijoIzquierdo());
             return sum;
         }
+    }
 
+    public void mostrarHojas() {
+        hojas(this.raiz);
+    }
+
+    public void hojas(Nodo nod) {
+        if (nod == null) {
+            return;
+        } else {
+            if (nod.getHijoDerecho() == null && nod.getHijoIzquierdo() == null) {
+                System.out.println(nod.getDato());
+            }
+            hojas(nod.getHijoIzquierdo());
+            hojas(nod.getHijoDerecho());
+        }
+    }
+
+    public void mostrarNodosInternos() {
+        internos(this.raiz.getHijoDerecho());
+        internos(this.raiz.getHijoIzquierdo());
+    }
+
+    public void internos(Nodo nod) {
+        if (nod == null) {
+            return;
+        }
+        if (nod.getHijoDerecho() == null && nod.getHijoIzquierdo() == null) {
+            return;
+        } else {
+            System.out.println(nod.getDato());
+            internos(nod.getHijoIzquierdo());
+            internos(nod.getHijoDerecho());
+        }
     }
 
     public int findSuccessor() {

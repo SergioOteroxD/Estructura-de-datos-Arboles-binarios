@@ -5,10 +5,7 @@
  */
 package Arbol;
 
-/**
- *
- * @author SergioxD
- */
+
 public class Nodo {
 
     private int dato;
@@ -88,6 +85,14 @@ public class Nodo {
 
     public int getTamanio() {
         return tamanio;
+    }
+
+    public void setHijoIzquierdo(Nodo hijoIzquierdo) {
+        this.hijoIzquierdo = hijoIzquierdo;
+    }
+
+    public void setHijoDerecho(Nodo hijoDerecho) {
+        this.hijoDerecho = hijoDerecho;
     }
 
     public Nodo getHijoIzquierdo() {

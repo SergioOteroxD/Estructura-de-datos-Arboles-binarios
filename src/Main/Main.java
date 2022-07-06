@@ -2,6 +2,8 @@ package Main;
 
 import Arbol.ArbolInt;
 import ArbolString.ArbolString;
+import cinco.Cinco;
+import cuatro.Cuatro;
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;
@@ -29,11 +31,15 @@ public class Main {
         while (!salir) {
             opcion = Integer.parseInt(JOptionPane.showInputDialog("Digite la opcion que quiere ejecutar\n"
                     + "1. Mostar dos arboles binarios\n"
-                    + " 2. Mostrar en preorden\n"
-                    + " 3. Mostrar en inorden\n"
-                    + " 4. Mostrar en postorden\n"
-                    + " 5. Eliminar un nodo\n"
-                    + " 6. SALIR\n"));
+                    + " 2. Calculo del arbol\n"
+                    + " 3. Intercambiar ramas\n"
+                    + " 4. Arboles-B\n"
+                    + " 5. Arboles-B+\n"
+                    + " 6. Arboles-B+\n"
+                    + " 7. Arboles-B+\n"
+                    + " 8. Arboles-B+\n"
+                    + " 9. Arboles-B+\n"
+                    + " 10. SALIR\n"));
 
             switch (opcion) {
                 case 1:
@@ -69,32 +75,66 @@ public class Main {
                     break;
 
                 case 2:
-                    System.out.println("Has seleccionado la opcion 2 Mostrar en preorden");
-                    System.out.println("El tamaño es de: "+ arbolInt.getTamanio());
-                    System.out.println("Máximo valor: "+ arbolInt.findSuccessor());
-                    System.out.println("El promedio es: "+ arbolInt.getPromedio());
+                    System.out.println("Has seleccionado la opcion 2 Calculo del arbol");
+                    System.out.println("Preorden: ");
+                    arbolInt.mostrarPreorden();
+                    System.out.println("\n----------------------------");
+                    System.out.println("\nEl tamaño es de: " + arbolInt.getTamanio());
+                    System.out.println("\n----------------------------");
+                    System.out.println("Máximo valor: " + arbolInt.findSuccessor());
+                    System.out.println("\n----------------------------");
+                    System.out.println("El promedio es: " + arbolInt.getPromedio());
+                    System.out.println("\n----------------------------");
+                    System.out.println("Hojas: ");
+                    arbolInt.mostrarHojas();
+                    System.out.println("\n----------------------------");
+                    System.out.println("Nodos internos: ");
+                    arbolInt.mostrarNodosInternos();
                     System.out.println("----------------------------");
                     break;
                 case 3:
-                    System.out.println("Has seleccionado la opcion 3 Mostrar en inorden");
+                    System.out.println("Has seleccionado la opcion 3 Intercambiar ramas");
+                    System.out.println("Preorden: ");
+                    arbolInt.mostrarPreorden();
+                    arbolInt.cambioRamas();
                     System.out.println("----------------------------");
+                    System.out.println("Preorden despues del cambio: ");
+                    arbolInt.mostrarPreorden();
                     break;
                 case 4:
-                    System.out.println("Has seleccionado la opcion 4 Mostrar en postorden");
+                    System.out.println("Has seleccionado la opcion 4 Arboles-B");
+                    Cuatro cuatro = new Cuatro();
+                    cuatro.mostrar();
                     System.out.println("----------------------------");
                     break;
                 case 5:
-                    System.out.println("Has seleccionado la opcion 5 Eliminar un nodo");
-                    int eli;
-                    eli = Integer.parseInt(JOptionPane.showInputDialog(null, "Inserte el valor a eliminar"));
+                    System.out.println("Has seleccionado la opcion 5 Arboles-B+");
+                    Cinco cinco = new Cinco();
+                    cinco.mostrar();
                     System.out.println("----------------------------");
                     break;
                 case 6:
+                    System.out.println("Has seleccionado la opcion ");
+                    System.out.println("----------------------------");
+                    break;
+                case 7:
+                    System.out.println("Has seleccionado la opcion ");
+                    System.out.println("----------------------------");
+                    break;
+                case 8:
+                    System.out.println("Has seleccionado la opcion ");
+                    System.out.println("----------------------------");
+                    break;
+                case 9:
+                    System.out.println("Has seleccionado la opcion ");
+                    System.out.println("----------------------------");
+                    break;
+                case 10:
                     salir = true;
                     System.out.println("----------------------------");
                     break;
                 default:
-                    System.out.println("Solo números entre 1 y 4");
+                    System.out.println("Solo números entre 1 y 10");
                     System.out.println("----------------------------");
 
             }
